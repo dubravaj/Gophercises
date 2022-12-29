@@ -54,10 +54,6 @@ func YAMLHandler(yml []byte, fallback http.Handler) (http.HandlerFunc, error) {
 
 	parsedYaml, err := parseYaml(yml)
 
-	if err != nil {
-		panic("Error")
-	}
-
 	yamlMap := buildMap(parsedYaml)
 
 	return MapHandler(yamlMap, fallback), err
