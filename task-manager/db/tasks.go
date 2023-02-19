@@ -50,7 +50,7 @@ func ListTasks() ([]Task, error) {
 	var tasks []Task
 	err := db.View(func(tx *bolt.Tx) error {
 		tasksBucket := tx.Bucket(tasksBucket)
-		tasksBucket.ForEach(func(k, v []byte) error {
+		_ = tasksBucket.ForEach(func(k, v []byte) error {
 			tasks = append(tasks, Task{Key: btoi(k), Value: string(v)})
 			return nil
 		})
