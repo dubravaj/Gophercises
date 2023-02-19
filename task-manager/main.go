@@ -7,7 +7,7 @@ import (
 
 	"github.com/dubravaj/task/cmd"
 	"github.com/dubravaj/task/db"
-	"github.com/mitchellh/go-homedir"
+	homedir "github.com/mitchellh/go-homedir"
 )
 
 func main() {
